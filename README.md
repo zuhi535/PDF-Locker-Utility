@@ -55,4 +55,20 @@ Do you want to lock (1) selected PDFs or (2) all PDFs in this directory? Enter 1
 Enter the password to lock the selected PDFs: ********
 ```
 
-
+```mermaid
+flowchart TD
+    A[Start] --> B[Display Header]
+    B --> C[Prompt for Directory]
+    C --> D{Directory Valid?}
+    D -->|Yes| E[List PDF Files]
+    D -->|No| C
+    E --> F[Display PDFs]
+    F --> G[Select Files or All PDFs]
+    G --> H[Enter Password]
+    H --> I[Encrypt PDFs]
+    I --> J[Show Results]
+    J --> K{Re-run or Exit?}
+    K -->|Re-run| C
+    K -->|Exit| L[Thank the User]
+    L --> M[End]
+```
